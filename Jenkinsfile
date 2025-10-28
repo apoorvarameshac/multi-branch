@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "apoorvar12/prod-java-app"
-        IMAGE_TAG = "prod-${BUILD_NUMBER}"
+        IMAGE_NAME = "apoorvar12/dev-java-app"
+        IMAGE_TAG = "dev-${BUILD_NUMBER}"
         FULL_IMAGE = "${IMAGE_NAME}:${IMAGE_TAG}"
-        CONTAINER_NAME = "prod-container"
+        CONTAINER_NAME = "dev-container"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/apoorvarameshac/multi-branch.git'
+                git branch: 'dev', credentialsId: 'github', url: 'https://github.com/apoorvarameshac/multi-branch.git'
             }
         }
 
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f $CONTAINER_NAME || true
-                    docker run -d --name $CONTAINER_NAME -p 8081:8080 $FULL_IMAGE
+                    docker run -d --name $CONTAINER_NAME -p 8082:8080 $FULL_IMAGE
                 '''
             }
         }

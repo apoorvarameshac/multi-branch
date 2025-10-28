@@ -36,10 +36,10 @@ public class Main {
                     "</style>" +
                     "</head>" +
                     "<body>" +
-                    "<h1>🚀 Hello, Docker from <span style='color:darkblue'>Prod Branch!</span></h1>" +
+                    "<h1>🚀 Hello, Docker from <span style='color:darkblue'>dev Branch!</span></h1>" +
                     "<p>Current date and time:</p>" +
                     "<h2>" + timeStamp + "</h2>" +
-                    "<footer>Powered by Java & Docker (Prod Branch)</footer>" +
+                    "<footer>Powered by Java & Docker (dev Branch)</footer>" +
                     "</body>" +
                     "</html>";
 
